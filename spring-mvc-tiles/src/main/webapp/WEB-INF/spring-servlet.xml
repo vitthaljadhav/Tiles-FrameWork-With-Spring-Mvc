@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- it is enable Annotation like @Required, @Autowired. @PostMapping,@GetMapping 
+		,@Bean...etc -->
+<!-- 	<context:annotation-config /> -->
+
+	<!-- its scanning seterotype annnoation, like @Componet, @Controller, @RestController, 
+		@Service,@Respository -->
+<!-- 	<context:component-scan base-package="com.info.tiles.*" /> -->
+
+	<!--view Resolver --><!-- 
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" />
+ -->
+	<!-- define the tiles Definations -->
+	<!-- <bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	 -->
+	
+<context:annotation-config />
+<context:component-scan base-package="com.info.tiles.*" />
+<bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
+<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+<property name="definitions">
+<list>
+<value>/WEB-INF/tiles.xml</value>
+</list>
+</property>
+</bean>
+</beans>
